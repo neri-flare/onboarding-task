@@ -1,0 +1,6 @@
+[submodule "animals-backend"]
+	path = animals-backend
+	url = git@github.com:neri-flare/animals-backend.git
+[submodule "animals-frontend"]
+	path = animals-frontend
+	url = git@github.com:neri-flare/animals-frontend.git
