@@ -1,0 +1,23 @@
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data_container:/data/db
+  server:
+    container_name: animals
+    build: ./animals
+    ports:
+      - '3000:3000'
+    command: yarn run start
+    depends_on:
+      - mongodb
+  client:
+    container_name: animals-frontend
+    build: ./animals-frontend
+    ports:
+      - '3100:3100'
+
+volumes:
+  mongodb_data_container:
